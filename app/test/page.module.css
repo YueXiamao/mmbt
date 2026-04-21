@@ -1,0 +1,203 @@
+.main {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg) 0%, rgba(201, 169, 110, 0.03) 100%);
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(201, 169, 110, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.bgDecor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decorCircle1,
+.decorCircle2 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.decorCircle1 {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  right: -100px;
+  animation: decorFloat 15s ease-in-out infinite;
+}
+
+.decorCircle2 {
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  left: -100px;
+  animation: decorFloat 12s ease-in-out infinite reverse;
+}
+
+@keyframes decorFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 20px); }
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+
+.progressSection {
+  margin-bottom: 40px;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progressLabel {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+
+.progressCat {
+  font-size: 24px;
+  display: inline-block;
+}
+
+.questionWrapper {
+  margin-bottom: 32px;
+  min-height: 320px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(:disabled) {
+  border-color: var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+
+.navButton:disabled,
+.navButton.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.navCenter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.navDotActive {
+  background: var(--color-accent-gold);
+  transform: scale(1.2);
+}
+
+.navDotAnswered {
+  background: rgba(201, 169, 110, 0.4);
+}
+
+.navMore {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.encouragement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: rgba(201, 169, 110, 0.08);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.encouragement svg {
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 24px 16px;
+  }
+  
+  .progress {
+    margin-bottom: 24px;
+  }
+  
+  .questionWrapper {
+    min-height: 280px;
+  }
+  
+  .navigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .navButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .navCenter {
+    order: -1;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "mmbt",
+  "version": "1.0.0",
+  "description": "MMTI - 猫猫性格测试",
+  "scripts": {
+    "dev": "next dev -p 3456",
+    "build": "next build",
+    "start": "next start -p 3456"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "vercel": "^51.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
